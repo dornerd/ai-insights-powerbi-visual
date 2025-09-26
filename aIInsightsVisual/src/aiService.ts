@@ -2,7 +2,7 @@ import { AIRequest, ProcessedData } from "./dataProcessor";
 import { AIInsight } from "./component";
 
 export class AIService {
-    private static readonly API_BASE_URL = "http://localhost:8000"; // FastAPI backend URL
+    private static readonly API_BASE_URL = "https://ai-insights-powerbi-visual.onrender.com"; // FastAPI backend URL
 
     public static async generateInsights(request: AIRequest, debugMode: boolean = false): Promise<AIInsight[]> {
         let debugInfo: any = null;
