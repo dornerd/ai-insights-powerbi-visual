@@ -74,6 +74,21 @@ class AIInsight(BaseModel):
 class InsightsResponse(BaseModel):
     insights: List[AIInsight]
 
+@app.get("/")
+async def root():
+    """Root endpoint"""
+    return {
+        "message": "AI Insights Power BI Visual API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+        "endpoints": {
+            "health": "/health",
+            "generate_insights": "/generate-insights",
+            "api_docs": "/docs"
+        }
+    }
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
